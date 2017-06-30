@@ -304,7 +304,8 @@ $.extend(true, kendo.ui.Pager.prototype.options.messages,{
   
 /* PivotGrid messages */
 if(kendo.ui.PivotGrid){
-  $.extend(true,kendo.ui.PivotGrid.prototype.options.messages, {
+  kendo.ui.PivotGrid.prototype.options.messages = 
+    $.extend(true,kendo.ui.PivotGrid.prototype.options.messages, {
     measureFields: "Veri Alanlarını Buraya Sürükleyin",
     columnFields: "Kolon Alanlarını Buraya Sürükleyin",
     rowFields: "Satır Alanlarını Buraya Sürükleyin"
@@ -365,7 +366,77 @@ $.extend(true, kendo.ui.Scheduler.prototype.options.messages,{
   }
 });
 }
+/* Slider messages */
 
+if (kendo.ui.Slider) {
+kendo.ui.Slider.prototype.options =
+$.extend(true, kendo.ui.Slider.prototype.options,{
+  "increaseButtonTitle": "Yükselt",
+  "decreaseButtonTitle": "Alçalt"
+});
+}
+
+/* ListBox messaages */
+
+if (kendo.ui.ListBox) {
+kendo.ui.ListBox.prototype.options.messages =
+$.extend(true, kendo.ui.ListBox.prototype.options.messages,{
+  "tools": {
+    "remove": "Sil",
+    "moveUp": "Yukarı Çıkart",
+    "moveDown": "Aşağı İndir",
+    "transferTo": "Gönder",
+    "transferFrom": "Al",
+    "transferAllTo": "Hepsini Gönder",
+    "transferAllFrom": "Hepsini Al"
+  }
+});
+}
+
+/* TreeList messages */
+
+if (kendo.ui.TreeList) {
+kendo.ui.TreeList.prototype.options.messages =
+$.extend(true, kendo.ui.TreeList.prototype.options.messages,{
+  "noRows": "Gösterilecek kayıt yok",
+  "loading": "Yükleniyor...",
+  "requestFailed": "Talep başarısız oldu.",
+  "retry": "Tekrarla",
+  "commands": {
+      "edit": "Düzenle",
+      "update": "Güncelle",
+      "canceledit": "İptal et",
+      "create": "Yeni kayıt ekle",
+      "createchild": "Altına yeni kayıt ekle",
+      "destroy": "Sil",
+      "excel": "Excel'e Gönder",
+      "pdf": "PDF'e Gönder"
+  }
+});
+}
+
+if (kendo.ui.TreeList) {
+kendo.ui.TreeList.prototype.options.columnMenu =
+$.extend(true, kendo.ui.TreeList.prototype.options.columnMenu, {
+    "messages": {
+        "columns": "Kolonları seçin",
+        "filter": "Filtrele",
+        "sortAscending": "Sırala (esc)",
+        "sortDescending": "Sırala (desc)"
+    }
+});
+}
+
+/* TreeView messages */
+
+if (kendo.ui.TreeView) {
+kendo.ui.TreeView.prototype.options.messages =
+$.extend(true, kendo.ui.TreeView.prototype.options.messages,{
+  "loading": "Yükleniyor...",
+  "requestFailed": "Talep başarısız.",
+  "retry": "Tekrarla"
+});
+}
 /* Upload messages */
 
 if (kendo.ui.Upload) {
@@ -381,19 +452,48 @@ $.extend(true, kendo.ui.Upload.prototype.options.localization,{
   "statusFailed": "Başarız Oldu",
   "statusUploaded": "Yüklendi",
   "statusUploading": "Yükleniyor",
-  "uploadSelectedFiles": "seçilen dosyaları Yükle"
+  "uploadSelectedFiles": "Seçilen dosyaları Yükle",
+  clearSelectedFiles: "Temizle",
+  statusWarning: "warning",
+  invalidMaxFileSize: "Dosya boyutu çok büyük.",
+  invalidMinFileSize: "Dosya boyutu çok küçük.",
+  invalidFileExtension: "Dosya uzantısı desteklenmiyor."
 });
 }
+  
+/* Validator messages */
 
+if (kendo.ui.Validator) {
+kendo.ui.Validator.prototype.options.messages =
+$.extend(true, kendo.ui.Validator.prototype.options.messages,{
+  "required": "{0} gerekli",
+  "pattern": "{0} geçerli değil",
+  "min": "{0} değeri {1} den büyük veya eşit olmalı",
+  "max": "{0} değeri {1} den küçük veya eşit olmalı",
+  "step": "{0} geçerli değil",
+  "email": "{0} geçerli bir mail adresi değil",
+  "url": "{0} geçerli bir URL değil",
+  "date": "{0} geçerli bir tarih değil",
+  "dateCompare": "Bitiş tarihi başlangıç tarihinden büyük veya eşit olmalı"
+});
+}
 /* Dialog */
 
 if (kendo.ui.Dialog) {
 kendo.ui.Dialog.prototype.options.messages =
 $.extend(true, kendo.ui.Dialog.prototype.options.localization, {
-  "close": "Kapatmak"
+  "close": "Kapat"
 });
 }
 
+  /* Calendar */
+if (kendo.ui.Calendar) {
+kendo.ui.Calendar.prototype.options.messages =
+$.extend(true, kendo.ui.Calendar.prototype.options.messages, {
+  "weekColumnHeader": ""
+});
+}
+  
 /* Alert */
 
 if (kendo.ui.Alert) {
@@ -421,5 +521,18 @@ $.extend(true, kendo.ui.Prompt.prototype.options.localization, {
   "cancel": "İptal"
 });
 }
-
+/* DateInput */
+  if(kendo.ui.DateInput){
+    kendo.ui.DateInput.prototype.options.messages = 
+      $.extend(true,kendo.ui.DateInput.prototype.options.messages,{
+      year: "yıl",
+      month: "ay",
+      day: "gün",
+      weekday: "haftanın günü",
+      hour: "saat",
+      minute: "dakika",
+      second: "saniye",
+      dayperiod: "ÖÖ/ÖS"
+    })
+  }
 })(window.kendo.jQuery);
