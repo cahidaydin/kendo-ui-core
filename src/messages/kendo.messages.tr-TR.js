@@ -301,7 +301,16 @@ $.extend(true, kendo.ui.Pager.prototype.options.messages,{
   "refresh": "Güncelle"
 });
 }
-
+  
+/* PivotGrid messages */
+if(kendo.ui.PivotGrid){
+  $.extend(true,kendo.ui.PivotGrid.prototype.options.messages, {
+    measureFields: "Veri Alanlarını Buraya Sürükleyin",
+    columnFields: "Kolon Alanlarını Buraya Sürükleyin",
+    rowFields: "Satır Alanlarını Buraya Sürükleyin"
+  });
+}
+  
 /* Scheduler messages */
 
 if (kendo.ui.Scheduler) {
